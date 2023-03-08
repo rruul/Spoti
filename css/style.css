@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 20%;
+    height: 80vh;
+    background-color: burlywood;
+}
+
+.contenedor {
+    width: 80%;
+    height: 80vh;
+    background-color: black;
+}
+
+.reproductor {
+    width: 100%;
+    height: 20vh;
+    background-color: aqua;
+}
+
+.buscador {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+    padding: 15px;
+}
+
+.card {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgStyle {
+    width: 100px!important;
+    height: 100px!important;
+}
+
+.cardStyle {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+}
+
+.songname {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.artistname {
+    font-family: 'Playfair Display', serif;
+    font-size: .8rem;
+    font-weight: 400;
+    color: white;
+}
+
+.inputBuscador {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: gray;
+    width: 70%;
+    border-radius: 30px;
+}
+
+.iconoBuscar {
+    margin-left: 10px;
+    color: white
+}
