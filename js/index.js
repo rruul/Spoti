@@ -53,17 +53,29 @@ const creaCards = () => {
 btnBuscar.addEventListener('keypress', () => {
     console.log('tecla', btnBuscar.value)
     let otro = btnBuscar.value
-    let expre = new RegExp(`${otro}.*`)
+    let expre = new RegExp(`${otro}.*`, 'i')
     let busq = topTwoHundred.filter(song=>expre.test(song.trackMetadata.trackName))
     if(btnBuscar.value != null){
-    document.getElementById('contenido').innerHTML = ''
-    busq.forEach((bus) => {
-    cardTop.querySelector('.songname').textContent = bus.trackMetadata.trackName
-    const clone = cardTop.cloneNode(true)
-    fragment.appendChild(clone)
-    })
+        document.getElementById('contenido').innerHTML = ''
+        busq.forEach((bus) => {
+            cardTop.querySelector('img').setAttribute('src', bus.trackMetadata.displayImageUri)
+            cardTop.querySelector('.songname').textContent = bus.trackMetadata.trackName
+            let artists = ''
+            let size = bus.trackMetadata.artists.length
+            bus.trackMetadata.artists.forEach((item, index) => {
+                //console.log(index, size)
+                if ( index === size -1 ){
+                artists += item.name
+                } else {
+                    artists += item.name +'/'
+                }
+                 })
+            cardTop.querySelector('.artistname').textContent = artists
+            const clone = cardTop.cloneNode(true)
+            fragment.appendChild(clone)
+        })
     contenido.appendChild(fragment)
     }else{
-    return
-    }
-    })
+        return
+    }   
+})
